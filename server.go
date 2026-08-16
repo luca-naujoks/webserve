@@ -7,12 +7,12 @@ import (
 )
 
 type Server struct {
-	addr    int8
+	addr    int
 	mux     *http.ServeMux
 	content fs.FS
 }
 
-func New(addr int8, content fs.FS) *Server {
+func New(addr int, content fs.FS) *Server {
 	s := &Server{
 		addr:    addr,
 		mux:     http.NewServeMux(),
