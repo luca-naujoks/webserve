@@ -1,4 +1,4 @@
-package main
+package webServe
 
 import (
 	"compress/gzip"

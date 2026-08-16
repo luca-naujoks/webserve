@@ -20,7 +20,7 @@ fmt.Printf("Error Creating Sub FS: %s", err.Error())
 return
 }
 
-r := server.New(80, webFS)
+r := webServe.New(80, webFS)
 
 err = r.Run()
 if err != nil {
