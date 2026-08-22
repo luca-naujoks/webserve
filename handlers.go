@@ -59,13 +59,5 @@ func serveEmbeddedFile(w http.ResponseWriter, r *http.Request, content fs.FS, pr
 		return
 	}
 
-	data, err := io.ReadAll(f)
-	if err != nil {
-		http.Error(w, "read error", http.StatusInternalServerError)
-		return
-	}
-
-	fmt.Printf("%s: %d bytes\n", fullPath, len(data))
-
 	http.ServeContent(w, r, stat.Name(), stat.ModTime(), f.(io.ReadSeeker))
 }
